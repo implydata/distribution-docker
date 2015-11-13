@@ -21,6 +21,17 @@ RUN apt-get -y install --no-install-recommends nodejs
 # Download package
 RUN curl http://static.imply.io/release/imply-1.0.0.tar.gz | tar -C /root -xzf -
 
+# Remove stuff we probably don't need, to save on space
+RUN apt-get -y remove software-properties-common
+RUN apt-get -y autoremove
+RUN apt-get -y clean
+RUN rm -fr \
+  /var/cache/oracle-jdk8-installer \
+  /usr/lib/jvm/java-8-oracle/src.zip \
+  /usr/lib/jvm/java-8-oracle/javafx-src.zip \
+  /usr/lib/jvm/java-8-oracle/lib/visualvm \
+  /usr/lib/jvm/java-8-oracle/lib/missioncontrol
+
 EXPOSE 1527
 EXPOSE 2181
 EXPOSE 8081
