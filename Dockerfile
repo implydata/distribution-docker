@@ -19,7 +19,7 @@ RUN (echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN apt-get -y install --no-install-recommends nodejs
 
 # Download package
-RUN curl http://static.imply.io/release/imply-1.0.0.tar.gz | tar -C /root -xzf -
+RUN curl http://static.imply.io/release/imply-1.0.1-e5be862.tar.gz | tar -C /root -xzf -
 
 # Remove stuff we probably don't need, to save on space
 RUN apt-get -y remove software-properties-common
@@ -52,4 +52,4 @@ EXPOSE 8109
 EXPOSE 8110
 EXPOSE 9095
 
-ENTRYPOINT ["/root/imply-1.0.0/bin/supervise", "-c", "/root/imply-1.0.0/conf/supervise/quickstart.conf"]
+ENTRYPOINT ["/root/imply-1.0.1-e5be862/bin/supervise", "-c", "/root/imply-1.0.1-e5be862/conf/supervise/quickstart.conf"]
