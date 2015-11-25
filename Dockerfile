@@ -52,4 +52,6 @@ EXPOSE 8109
 EXPOSE 8110
 EXPOSE 9095
 
-ENTRYPOINT ["/root/imply-1.0.1/bin/supervise", "-c", "/root/imply-1.0.1/conf/supervise/quickstart.conf"]
+WORKDIR /root/imply-1.0.1
+
+CMD ["bin/supervise", "-c", "conf/supervise/quickstart.conf"]
