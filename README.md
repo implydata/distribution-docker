@@ -1,3 +1,5 @@
+Dockerized version of the distribution in https://github.com/implydata/distribution.
+
 To build an image:
 
 ```
