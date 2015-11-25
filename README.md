@@ -22,8 +22,8 @@ To enter the container, if you want:
 docker exec -it imply /bin/bash
 ```
 
-To kill the container:
+To stop the container:
 
 ```
-docker kill imply
+docker stop imply
 ```
