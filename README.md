@@ -3,13 +3,15 @@ Dockerized version of the distribution in https://github.com/implydata/distribut
 To build an image:
 
 ```
-docker build -t imply/imply:1.0.1 .
+export implyversion=1.0.1
+tar -xzf /path/to/imply-$implyversion.tar.gz
+docker build -t imply/imply:$implyversion --build-arg implyversion=$implyversion .
 ```
 
 To run the image in quickstart mode (single-machine, non-clustered):
 
 ```
-docker run -p 8081-8110:8081-8110 -p 9095:9095 -d --name imply imply/imply:1.0.1
+docker run -p 8081-8110:8081-8110 -p 8200:8200 -p 9095:9095 -d --name imply imply/imply:$implyversion
 ```
 
 To load the example data:
