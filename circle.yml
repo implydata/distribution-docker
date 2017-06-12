@@ -20,9 +20,3 @@ deployment:
     branch: develop
     commands:
       - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
-
-  release:
-    tag: /v(\d+\.){2}\d+.*/
-    owner: rksg
-    commands:
-      - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
