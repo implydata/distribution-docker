@@ -1,0 +1,28 @@
+machine:
+  environment:
+    IMPLY_VERSION: 2.2.3
+  services:
+    - docker
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+
+test:
+  override:
+    - aws configure set default.region us-west-2
+    - eval "$(aws ecr get-login)"
+    - docker build -t $AWS_ECR_REPOSITORY/$CIRCLE_PROJECT_REPONAME:$IMPLY_VERSION .
+
+deployment:
+  stage:
+    branch: develop
+    commands:
+      - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
+
+  release:
+    tag: /v(\d+\.){2}\d+.*/
+    owner: rksg
+    commands:
+      - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
