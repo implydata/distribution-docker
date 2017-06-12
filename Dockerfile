@@ -3,8 +3,10 @@ FROM ubuntu:16.04
 ENV IMPLY_VERSION 2.2.3
 RUN apt-get update && apt-get install -y cron wget
 
-RUN wget https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz > /root/imply-$IMPLY_VERSION.tar.gz && \
-    tar -xzf /root/imply-$IMPLY_VERSION.tar.gz
+RUN wget https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz && \
+    tar -xzf /imply-$IMPLY_VERSION.tar.gz && \
+    rm /imply-$IMPLY_VERSION.tar.gz && \
+    mv imply-$IMPLY_VERSION /root
 
 # Prepare OS
 COPY setup-os.sh /root
