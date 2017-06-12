@@ -1,9 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y cron curl
+RUN apt-get update && apt-get install -y cron wget
 
-RUN curl https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz \
-    --compressed > /root/imply-$IMPLY_VERSION.tar.gz && \
+RUN wget https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz > /root/imply-$IMPLY_VERSION.tar.gz && \
     tar -xzf /root/imply-$IMPLY_VERSION.tar.gz
 
 # Prepare OS
