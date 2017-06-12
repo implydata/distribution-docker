@@ -17,7 +17,7 @@ test:
 
 deployment:
   stage:
-    branch: develop
+    branch: RSA-2216-imply
     commands:
       - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
 
