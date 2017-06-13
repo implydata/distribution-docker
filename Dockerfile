@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV IMPLY_VERSION 2.2.3
+ARG IMPLY_VERSION
 RUN apt-get update && apt-get install -y cron wget
 
 RUN wget https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz && \

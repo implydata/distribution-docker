@@ -13,7 +13,7 @@ test:
   override:
     - aws configure set default.region us-west-2
     - eval "$(aws ecr get-login)"
-    - docker build -t $AWS_ECR_REPOSITORY/$CIRCLE_PROJECT_REPONAME:$IMPLY_VERSION .
+    - docker build -t $AWS_ECR_REPOSITORY/$CIRCLE_PROJECT_REPONAME:$IMPLY_VERSION --build-arg IMPLY_VERSION=$IMPLY_VERSION .
 
 deployment:
   stage:
