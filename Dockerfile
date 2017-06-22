@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ARG IMPLY_VERSION
-RUN apt-get update && apt-get install -y cron wget
+RUN apt-get update && apt-get install -y cron wget && apt-get clean
 
 RUN wget https://static.imply.io/release/imply-$IMPLY_VERSION.tar.gz && \
     tar -xzf /imply-$IMPLY_VERSION.tar.gz && \
