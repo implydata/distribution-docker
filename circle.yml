@@ -1,6 +1,6 @@
 machine:
   environment:
-    IMPLY_VERSION: 2.3.0-PREVIEW6
+    IMPLY_VERSION: 2.3.0-PREVIEW8
   services:
     - docker
 
@@ -17,6 +17,6 @@ test:
 
 deployment:
   stage:
-    branch: develop
+    branch: master
     commands:
       - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
