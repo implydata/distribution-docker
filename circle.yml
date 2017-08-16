@@ -14,9 +14,4 @@ test:
     - aws configure set default.region us-west-2
     - eval "$(aws ecr get-login)"
     - docker build -t $AWS_ECR_REPOSITORY/$CIRCLE_PROJECT_REPONAME:$IMPLY_VERSION --build-arg IMPLY_VERSION=$IMPLY_VERSION .
-
-deployment:
-  stage:
-    branch: master
-    commands:
-      - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
+    - ./shared/scripts/push-to-ecr.sh $IMPLY_VERSION
