@@ -1,6 +1,6 @@
 machine:
   environment:
-    IMPLY_VERSION: 2.3.0-PREVIEW16
+    IMPLY_VERSION: 2.3.0-PREVIEW18
   services:
     - docker
 
