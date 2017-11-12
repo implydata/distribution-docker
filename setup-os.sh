@@ -17,6 +17,10 @@ apt-get update
 # Install Node
 apt-get -y install --no-install-recommends nodejs
 
+# Install perl dependencies
+apt-get install -y cpanminus
+cpanm FindBin
+
 # Remove stuff we probably don't need, to save on space
 apt-get -y remove software-properties-common
 apt-get -y autoremove
