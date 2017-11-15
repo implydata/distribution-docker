@@ -2,7 +2,6 @@ FROM ubuntu:16.04
 
 # Prepare OS
 COPY setup-os.sh /root
-COPY nodesource-pubkey /root/nodesource-pubkey
 RUN /root/setup-os.sh
 
 # Copy package from build directory
