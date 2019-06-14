@@ -5,6 +5,7 @@
 #
 
 apt-get update
+apt-get -y upgrade
 apt-get -y install --no-install-recommends \
                    curl apt-transport-https \
                    python python2.7 perl \
