@@ -9,7 +9,7 @@ apt-get -y upgrade
 apt-get -y install --no-install-recommends \
                    curl apt-transport-https \
                    python python2.7 perl \
-                   software-properties-common gnupg2 jq
+                   software-properties-common gnupg2 jq vim less
 
 #
 # Sync Java (Azul Zulu) repository
