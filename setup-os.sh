@@ -8,7 +8,7 @@ apt-get update
 apt-get -y install --no-install-recommends \
                    curl apt-transport-https \
                    python python2.7 perl \
-                   software-properties-common
+                   software-properties-common gnupg2 jq
 
 #
 # Sync Java (Azul Zulu) repository
