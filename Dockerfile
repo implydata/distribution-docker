@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 
+USER root
+WORKDIR /root
+
 # Prepare OS
 COPY setup-os.sh /root
 RUN /root/setup-os.sh
