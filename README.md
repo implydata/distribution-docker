@@ -13,7 +13,7 @@ docker build -t imply:$implyversion --build-arg implyversion=$implyversion .
 To run the image in quickstart mode (single-machine, non-clustered):
 
 ```
-docker run -p 8081-8110:8081-8110 -p 8200:8200 -p 8888:8888 -p 9095:9095 -d --name imply imply:$implyversion
+docker run -p 8081-8110:8081-8110 -p 8200:8200 -p 8888:8888 -p 9095:9095 -d --name imply imply:$implyversion --platform amd64
 ```
 
 To load the example data:
