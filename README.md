@@ -2,7 +2,7 @@ Dockerized version of the distribution available at https://imply.io/download.
 
 [Install Docker](docker-install.md)
 
-To build an image, first download the Imply distribution from the link above, place it in the cloned repository, and then run:
+To build an image, first download the Imply distribution from the link above, place it in the cloned repository, and then run: 
 
 ```
 export implyversion=2021.11
